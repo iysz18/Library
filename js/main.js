@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        this.read = read;
+        this.read = `${read ? "already read" : "not read yet"}`;
     };
 
     /* Function to create the Book with all the provided 
