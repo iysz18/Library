@@ -8,14 +8,14 @@ body {
 }
 
 /* adjust the position of the "Add Book" button on page */
-.add-book {
+.openBookDialog {
   padding: 20px 30px;
   font-size: 35px;
   font-weight: bold;
 }
 
 /* styling for the book register dialog/form */
-.book-register {
+.bookForm {
   display: grid;
   grid-template: repeat(5, fit-content) / 1fr;
 }
