@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                       Read: ${book.read}</br>`;
             infoCard.appendChild(bookInfoPara);
             bookshelf.appendChild(infoCard);
+            // Should be replaced in the future, its not really efficient
         });
     };
 
