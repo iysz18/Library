@@ -18,23 +18,34 @@ document.addEventListener("DOMContentLoaded", () => {
     function addBookToLibrary(title, author, pages, readStatus) {
         const newBook = new Book(title, author, pages, readStatus);
         myLibrary.push(newBook);
-        myLibrary.forEach(book => console.log(book));
     };
 
     // Render books function which will loop over the myLibrary array and create new cards for each book
     function renderBook() {
         const bookshelf = document.querySelector(".bookshelf-container");
 
-        // before creating and rendering each book's info card, remove all of them to ensure no duplicates
-        if (bookshelf.hasChildNodes(z)) {
+        // before creating and rendering each book's info card, remove all of them to ensure no duplicates exist
+        if (bookshelf.hasChildNodes()) {
             // Convert the childNodes into an array to safely loop over and remove.
             Array.from(bookshelf.childNodes).forEach(card => {
                 bookshelf.removeChild(card);
             });
         }
 
+        // Create book info card
+        const infoCard = document.createElement("div");
 
-    }
+        // Create paragprah and populate it with the book's info
+        myLibrary.forEach(book => {
+            const bookInfoPara = document.createElement('p');
+            bookInfoPara.innerHTML = `Title: ${book.title}</br>
+                                      Author: ${book.author}</br>
+                                      Pages: ${book.pages}</br>
+                                      Read: ${book.read}</br>`;
+            infoCard.appendChild(bookInfoPara);
+            bookshelf.appendChild(infoCard);
+        });
+    };
 
     // Referencing each button needed to create a book
     const openDialogBtn = document.querySelector(".btn-open-dialog");
