@@ -21,7 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
         myLibrary.forEach(book => console.log(book));
     };
 
-    // TODO Here: Implement renderBook() to display each book at pageload
+    // Render books function which will loop over the myLibrary array and create new cards for each book
+    function renderBook() {
+        const bookshelf = document.querySelector(".bookshelf-container");
+
+        // before creating and rendering each book's info card, remove all of them to ensure no duplicates
+        if (bookshelf.hasChildNodes(z)) {
+            // Convert the childNodes into an array to safely loop over and remove.
+            Array.from(bookshelf.childNodes).forEach(card => {
+                bookshelf.removeChild(card);
+            });
+        }
+
+
+    }
 
     // Referencing each button needed to create a book
     const openDialogBtn = document.querySelector(".btn-open-dialog");
@@ -37,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const readInfo = document.querySelector("#book-read-status").checked;
 
         addBookToLibrary(titleInfo, authorInfo, pagesInfo, readInfo);
+
+        // Render each book from myLibrary array
+        renderBook();
 
         // Clear input field whenever book added to library 
         const allInputFields = document.querySelectorAll("input");
