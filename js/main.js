@@ -50,21 +50,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-
-
         // Create paragprah and populate it with the book's info
         myLibrary.forEach((book, index) => {
             // Create book info card
             const infoCard = document.createElement("div");
             infoCard.classList.add("infoCard");
 
-            // Now creating each paragraph for each book containing information
-            const bookInfoPara = document.createElement('p');
-            bookInfoPara.innerHTML = `Title: ${book.title}</br>
-                                      Author: ${book.author}</br>
-                                      Pages: ${book.pages}</br>
-                                      Read: ${book.read}</br>`;
-            infoCard.appendChild(bookInfoPara);
+            const bookTitle = document.createElement('p');
+            const bookAuthor = document.createElement('p');
+            const bookPages = document.createElement('p');
+            const bookRead = document.createElement('p');
+
+            bookTitle.innerHTML = `${book.title}`;
+            bookAuthor.innerHTML = `${book.author}`;
+            bookPages.innerHTML = `${book.pages}`;
+            bookRead.innerHTML = `${book.read}`;
+
+            infoCard.appendChild(bookTitle);
+            infoCard.appendChild(bookAuthor);
+            infoCard.appendChild(bookPages);
+            infoCard.appendChild(bookRead);
 
             // Add a remove button to remove the selected book from library
             const removeBtn = document.createElement('a')
