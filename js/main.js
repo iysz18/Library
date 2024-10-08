@@ -50,11 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Create book info card
-        const infoCard = document.createElement("div");
+
 
         // Create paragprah and populate it with the book's info
         myLibrary.forEach((book, index) => {
+            // Create book info card
+            const infoCard = document.createElement("div");
+            infoCard.classList.add("infoCard");
+
+            // Now creating each paragraph for each book containing information
             const bookInfoPara = document.createElement('p');
             bookInfoPara.innerHTML = `Title: ${book.title}</br>
                                       Author: ${book.author}</br>
