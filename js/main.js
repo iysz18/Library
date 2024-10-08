@@ -36,15 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const infoCard = document.createElement("div");
 
         // Create paragprah and populate it with the book's info
-        myLibrary.forEach(book => {
+        myLibrary.forEach((book, index) => {
             const bookInfoPara = document.createElement('p');
             bookInfoPara.innerHTML = `Title: ${book.title}</br>
                                       Author: ${book.author}</br>
                                       Pages: ${book.pages}</br>
                                       Read: ${book.read}</br>`;
             infoCard.appendChild(bookInfoPara);
+
+            // Add a remove button to remove the selected book from library
+            const removeBtn = document.createElement('a')
+            removeBtn.textContent = "Remove";
+
+            // When clicking the removeBtn, remove the book
+            removeBtn.addEventListener("click", () => {
+                // Remove the book from myLibrary using its index
+                myLibrary.splice(index, 1);
+                
+                // Re-render the bookshelf to reflect the changes
+                renderBook();
+            });
+            
+            infoCard.appendChild(removeBtn);
             bookshelf.appendChild(infoCard);
-            // Should be replaced in the future, its not really efficient
         });
     };
 
