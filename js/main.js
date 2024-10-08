@@ -3,6 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Array to store books and display them when page loads 
     const myLibrary = new Array();
+
+    // Load three books into the myLibrary array for demonstration
+    myLibrary[0] = {
+        title: "The Daily Stoic",
+        author: "Ryan Holiday",
+        pages: 416,
+        read: "already read",
+    };
+
+    myLibrary[1] = {
+        title: "The 48 Laws of Power",
+        author: "Robert Greene",
+        pages: 452,
+        read: "already red",
+    };
+
+    // render them from the beginning
+    renderBook();
     
     // Object constructor to create new book instances
     function Book(title, author, pages, read) {
@@ -57,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderBook();
             });
             
+            // Append created elements to their parent elements
             infoCard.appendChild(removeBtn);
             bookshelf.appendChild(infoCard);
         });
