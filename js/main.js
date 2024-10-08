@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             infoCard.appendChild(bookRead);
 
             // Add a remove button to remove the selected book from library
-            const removeBtn = document.createElement('a')
+            const removeBtn = document.createElement('button')
             removeBtn.textContent = "Remove";
 
             // When clicking the removeBtn, remove the book
