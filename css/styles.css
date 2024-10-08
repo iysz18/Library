@@ -1,21 +1,30 @@
-/* styling to center everthing on page, simple resetting */
+/* Resetting margin and padding, centering the elements on page */
 body {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+
 }
 
-/* adjust the position of the "Add Book" button on page */
-.openBookDialog {
+/* Styling the button which opens the dialog */
+.btn-open-dialog {
+  background: #5e5e5e;
+  color: whitesmoke;
   padding: 20px 30px;
-  font-size: 35px;
-  font-weight: bold;
+  font-size: 30px;
+  border-radius: 10px;
+  border: none;
 }
 
-/* styling for the book register dialog/form */
-.bookForm {
-  display: grid;
-  grid-template: repeat(5, fit-content) / 1fr;
+.btn-open-dialog:hover {
+  background: #808080;
+}
+
+.infoCard {
+  background: whitesmoke;
+  border: 2px solid black;
+  margin: 10px 0;
 }
