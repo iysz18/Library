@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "The 48 Laws of Power",
         author: "Robert Greene",
         pages: 452,
-        read: "already red",
+        read: "already read",
     };
 
     // render them from the beginning
@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const bookPages = document.createElement('p');
             const bookRead = document.createElement('p');
 
-            bookTitle.innerHTML = `${book.title}`;
-            bookAuthor.innerHTML = `${book.author}`;
-            bookPages.innerHTML = `${book.pages}`;
-            bookRead.innerHTML = `${book.read}`;
+            bookTitle.innerHTML = `Title: ${book.title}`;
+            bookAuthor.innerHTML = `Author: ${book.author}`;
+            bookPages.innerHTML = `Pages: ${book.pages}`;
+            bookRead.innerHTML = `Read: ${book.read}`;
 
             infoCard.appendChild(bookTitle);
             infoCard.appendChild(bookAuthor);
@@ -72,8 +72,17 @@ document.addEventListener("DOMContentLoaded", () => {
             infoCard.appendChild(bookRead);
 
             // Add a remove button to remove the selected book from library
-            const removeBtn = document.createElement('button')
+            const removeBtn = document.createElement('button');
             removeBtn.textContent = "Remove";
+
+            // Add a read status changing button
+            const updateReadStatus = document.createElement('button');
+            updateReadStatus.textContent = "Update Reading status";
+            updateReadStatus.addEventListener("click", () => {
+                book.read = book.read === "already read" ? "not read yet" : "already read";
+                renderBook();
+            });
+
 
             // When clicking the removeBtn, remove the book
             removeBtn.addEventListener("click", () => {
@@ -86,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Append created elements to their parent elements
             infoCard.appendChild(removeBtn);
+            infoCard.appendChild(updateReadStatus);
             bookshelf.appendChild(infoCard);
         });
     };
@@ -103,6 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const pagesInfo = document.querySelector("#book-pages").value;
         const readInfo = document.querySelector("#book-read-status").checked;
 
+        if (pagesInfo <= 0) {
+            alert("Enter a nu")
+        }
+        
         addBookToLibrary(titleInfo, authorInfo, pagesInfo, readInfo);
 
         // Render each book from myLibrary array
