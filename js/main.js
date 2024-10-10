@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const updateReadStatus = document.createElement('button');
             updateReadStatus.textContent = "Update Reading status";
             updateReadStatus.addEventListener("click", () => {
+                // Toggle the read status
                 book.read = book.read === "already read" ? "not read yet" : "already read";
                 renderBook();
             });
