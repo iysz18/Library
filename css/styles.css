@@ -5,14 +5,29 @@ body {
   height: 100vh;
 }
 
+/* Start of: Styling for the library-container */
+.library-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* End of: Styling for the library-container */
+
  /* Begin of: Stylings applied for the form */
 .btn-open-dialog {
-  background: #214001;
+  background: #A62B1F;
   color: whitesmoke;
   padding: 20px 30px;
+  margin-bottom: 25px;
   font-size: 30px;
   border-radius: 10px;
   border: none;
+}
+
+.btn-open-dialog:hover {
+  background: #D96941;
 }
 
 
@@ -34,27 +49,28 @@ form {
 .bookshelf-container {
   display: flex;
   gap: 10px;
+  margin: 10px;
 }
 /* End of: Styling for the bookshelf */
 
 /* Begin of: Styling the Cards which hold information about the book */
 .infoCard {
-  background: whitesmoke;
-  border: 2px solid black;
+  background: #214001;
+  border-radius: 10px;
   padding: 20px;
-  margin: 10px 0;
-  font-family: Roboto;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  width: 300px;
 }
 
-.infoCard button {
-  width: fit-content;
+.infoCard:hover {
+  background: #2E5902;
+}
+
+.infoCard p:first-child {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .infoCard p {
-  margin: 0;
+  color: #FFFFFF;
+  font-family: Roboto;
 }
-
