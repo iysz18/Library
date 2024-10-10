@@ -2,16 +2,12 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-
 }
 
-/* Styling the button which opens the dialog */
+ /* Begin of: Stylings applied for the form */
 .btn-open-dialog {
-  background: #5e5e5e;
+  background: #214001;
   color: whitesmoke;
   padding: 20px 30px;
   font-size: 30px;
@@ -19,12 +15,46 @@ body {
   border: none;
 }
 
-.btn-open-dialog:hover {
-  background: #808080;
+
+/* Add a grid to the form to make it semantically more accessible/appealing */
+.form-book-entry {
+  display: grid;
+  grid-template: repeat(5, 300px) / 1fr;
+  height: 400px;
+  width: 300px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+/* End of: Stylings applied for the form */
+
+/* Start of: Styling for the bookshelf */
+.bookshelf-container {
+  display: flex;
+  gap: 10px;
+}
+/* End of: Styling for the bookshelf */
+
+/* Begin of: Styling the Cards which hold information about the book */
 .infoCard {
   background: whitesmoke;
   border: 2px solid black;
+  padding: 20px;
   margin: 10px 0;
+  font-family: Roboto;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+.infoCard button {
+  width: fit-content;
+}
+
+.infoCard p {
+  margin: 0;
+}
+
