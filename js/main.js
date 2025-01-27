@@ -22,13 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // render them from the beginning
     renderBook();
     
-    // Object constructor to create new book instances
-    function Book(title, author, pages, read) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.read = `${read ? "already read" : "not read yet"}`;
-    };
+    // using ES6 class to create book class
+    class Book {
+        constructor(title, author, pages, read) {
+            this.title = title;
+            this.author = author;
+            this.pages = pages;
+            this.read = `${read ? "already read" : "not read yet"}`;
+        }
+    }
 
     /* Function to create the Book with all the provided 
        info and adding it to the myLibrary array 
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         myLibrary.push(newBook);
     };
 
-    // Render books function which will loop over the myLibrary array and create new cards for each book
+    // Render books function which will loop overs the myLibrary array and create new cards for each book
     function renderBook() {
         const bookshelf = document.querySelector(".bookshelf-container");
 
